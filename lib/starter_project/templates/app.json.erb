@@ -45,11 +45,11 @@
       }
     },
     "AWSRegionArch2AMI": {
-      "us-east-1": {
+      "ap-southeast-2": {
         "32": "",
         "64": "<%= @ami %>"
       },
-      "us-west-1": {
+      "ap-southeast-1": {
         "32": "",
         "64": ""
       }
@@ -282,9 +282,9 @@
     "WebServerGroup": {
       "Properties": {
         "AvailabilityZones": [
-          "us-east-1a",
-          "us-east-1d",
-          "us-east-1e"
+          "ap-southeast-2a",
+          "ap-southeast-2b",
+          "ap-southeast-2c"
         ],
         "HealthCheckGracePeriod": "300",
         "HealthCheckType": "ELB",
@@ -306,7 +306,7 @@
             "autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
           ],
           "TopicARN": [
-            "arn:aws:sns:us-east-1:867690557112:ops"
+            "arn:aws:sns:ap-southeast-2:867690557112:ops"
           ]
         }
       },
@@ -337,9 +337,9 @@
     "elb": {
       "Properties": {
         "AvailabilityZones": [
-          "us-east-1a",
-          "us-east-1d",
-          "us-east-1e"
+          "ap-southeast-2a",
+          "ap-southeast-2b",
+          "ap-southeast-2c"
         ],
         "HealthCheck": {
           "HealthyThreshold": "3",

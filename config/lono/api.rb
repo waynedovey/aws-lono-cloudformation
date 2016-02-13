@@ -1,7 +1,8 @@
 template "prod-api-app.json" do
   source "app.json.erb"
   variables(
-    :ami => "ami-123",
+    :ami => "ami-e0c19f83",
+    :availability_zone => "ap-southeast-2a",
     :instance_type => "m1.small",
     :port => "80",
     :high_threshold => "15",
@@ -12,14 +13,15 @@ template "prod-api-app.json" do
     :min_size => "6",
     :down_adjustment => "-3",
     :up_adjustment => "3",
-    :ssl_cert => "arn:aws:iam::12345:server-certificate/wildcard"
+    :ssl_cert => "arn:aws:iam::260763030200:server-certificate/loadbalancer00"
   )
 end
 
 template "prod-api-worker.json" do
   source "app.json.erb"
   variables(
-    :ami => "ami-123",
+    :ami => "ami-e0c19f83",
+    :availability_zone => "ap-southeast-2a",
     :instance_type => "m1.small",
     :port => "80",
     :high_threshold => "15",
@@ -31,17 +33,17 @@ template "prod-api-worker.json" do
     :down_adjustment => "-3",
     :up_adjustment => "3",
     :user_data_script => "ruby_script.rb.erb",
-    :ssl_cert => "arn:aws:iam::12345:server-certificate/wildcard"
+    :ssl_cert => "arn:aws:iam::260763030200:server-certificate/loadbalancer00"
   )
 end
 
 template "prod-api-redis.json" do
   source "db.json.erb"
   variables(
-    :ami => "ami-456",
+    :ami => "ami-e0c19f83",
+    :availability_zone => "ap-southeast-2a",
     :instance_type => "m1.small",
     :port => "80",
-    :volume_size => "20",
-    :availability_zone => "us-east-1e"
+    :volume_size => "20"
   )
 end

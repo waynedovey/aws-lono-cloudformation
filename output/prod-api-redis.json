@@ -22,7 +22,7 @@
   },
   "Parameters": {
     "Ami": {
-      "Default": "ami-456",
+      "Default": "ami-e0c19f83",
       "Description": "deploy ami",
       "Type": "String"
     },
@@ -208,7 +208,7 @@
     },
     "server": {
       "Properties": {
-        "AvailabilityZone": "us-east-1e",
+        "AvailabilityZone": "ap-southeast-2a",
         "ImageId": {
           "Ref": "Ami"
         },
