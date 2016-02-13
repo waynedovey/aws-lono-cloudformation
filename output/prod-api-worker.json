@@ -181,7 +181,7 @@
     "HostRecord": {
       "Properties": {
         "Comment": "DNS name for mydomain.com",
-        "HostedZoneName": ".mydomain.net.",
+        "HostedZoneName": ".example.com.",
         "Name": {
           "Fn::Join": [
             "",
