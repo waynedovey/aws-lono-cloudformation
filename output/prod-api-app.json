@@ -319,7 +319,7 @@
           "ap-southeast-2c"
         ],
         "HealthCheckGracePeriod": "300",
-        "HealthCheckType": "ELB",
+        "HealthCheckType": "EC2",
         "LaunchConfigurationName": {
           "Ref": "LaunchConfig"
         },
