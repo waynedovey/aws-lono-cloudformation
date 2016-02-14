@@ -6,7 +6,7 @@ template "prod-blog-app.json" do
     :app => app,
     :role => role,
     :ami => "ami-456",
-    :instance_type => "m1.small",
+    :instance_type => "t2.micro",
     :port => "80",
     :high_threshold => "35",
     :high_periods => "4",

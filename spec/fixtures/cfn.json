@@ -39,7 +39,7 @@
     "InstanceType": {
       "AllowedValues": [
         "t1.micro",
-        "m1.small",
+        "t2.micro",
         "m1.medium",
         "m1.large",
         "m1.xlarge",
@@ -53,14 +53,14 @@
         "cg1.4xlarge"
       ],
       "ConstraintDescription": "must be a valid EC2 instance type.",
-      "Default": "m1.small",
+      "Default": "t2.micro",
       "Description": "server EC2 instance type",
       "Type": "String"
     },
     "KeyName": {
       "AllowedPattern": "[-_ a-zA-Z0-9]*",
       "ConstraintDescription": "can contain only alphanumeric characters, spaces, dashes and underscores.",
-      "Default": "default",
+      "Default": "cloudformation-ap-southeast-2",
       "Description": "Name of an existing EC2 KeyPair to enable SSH access to the instances",
       "MaxLength": "64",
       "MinLength": "1",
@@ -138,7 +138,7 @@
     "HostRecord": {
       "Properties": {
         "Comment": "DNS name for my stack.",
-        "HostedZoneName": ".example.com.",
+        "HostedZoneName": "example.com.",
         "Name": {
           "Fn::Join": [
             "",
@@ -146,7 +146,7 @@
               {
                 "Ref": "AWS::StackName"
               },
-              ".example.com."
+              "example.com."
             ]
           ]
         },

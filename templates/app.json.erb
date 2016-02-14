@@ -25,7 +25,7 @@
       "m1.medium": {
         "Arch": "64"
       },
-      "m1.small": {
+      "t2.micro": {
         "Arch": "64"
       },
       "m1.xlarge": {
@@ -88,7 +88,7 @@
     "InstanceType": {
       "AllowedValues": [
         "t1.micro",
-        "m1.small",
+        "t2.micro",
         "m1.medium",
         "m1.large",
         "m1.xlarge",
@@ -107,7 +107,7 @@
       "Type": "String"
     },
     "KeyName": {
-      "Default": "default",
+      "Default": "cloudformation-ap-southeast-2",
       "Description": "The EC2 Key Pair to allow SSH access to the instances",
       "Type": "String"
     },
@@ -179,7 +179,7 @@
       },
       "Type": "AWS::CloudWatch::Alarm"
     },
-    <%= partial("host_record.json.erb", :domain => "mydomain.com") %>
+    <%= partial("host_record.json.erb", :domain => "example.com") %>
     "LaunchConfig": {
       "Properties": {
         "BlockDeviceMappings": [
@@ -306,7 +306,7 @@
             "autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
           ],
           "TopicARN": [
-            "arn:aws:sns:ap-southeast-2:867690557112:ops"
+            "arn:aws:sns:ap-southeast-2:260763030200:deploy"
           ]
         }
       },

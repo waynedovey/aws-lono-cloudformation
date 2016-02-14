@@ -24,9 +24,6 @@
       "m1.medium": {
         "Arch": "64"
       },
-      "m1.small": {
-        "Arch": "64"
-      },
       "m1.xlarge": {
         "Arch": "64"
       },
@@ -40,6 +37,9 @@
         "Arch": "64"
       },
       "t1.micro": {
+        "Arch": "64"
+      },
+      "t2.micro": {
         "Arch": "64"
       }
     },
@@ -87,7 +87,7 @@
     "InstanceType": {
       "AllowedValues": [
         "t1.micro",
-        "m1.small",
+        "t2.micro",
         "m1.medium",
         "m1.large",
         "m1.xlarge",
@@ -101,12 +101,12 @@
         "cg1.4xlarge"
       ],
       "ConstraintDescription": "must be a valid EC2 instance type.",
-      "Default": "m1.small",
+      "Default": "t2.micro",
       "Description": "WebServer EC2 instance type",
       "Type": "String"
     },
     "KeyName": {
-      "Default": "default",
+      "Default": "cloudformation-ap-southeast-2",
       "Description": "The EC2 Key Pair to allow SSH access to the instances",
       "Type": "String"
     },
@@ -180,8 +180,8 @@
     },
     "HostRecord": {
       "Properties": {
-        "Comment": "DNS name for mydomain.com",
-        "HostedZoneName": ".example.com.",
+        "Comment": "DNS name for example.com",
+        "HostedZoneName": "example.com.",
         "Name": {
           "Fn::Join": [
             "",
@@ -189,7 +189,7 @@
               {
                 "Ref": "AWS::StackName"
               },
-              ".mydomain.com"
+              ".example.com"
             ]
           ]
         },
@@ -338,7 +338,7 @@
             "autoscaling:EC2_INSTANCE_TERMINATE_ERROR"
           ],
           "TopicARN": [
-            "arn:aws:sns:ap-southeast-2:867690557112:ops"
+            "arn:aws:sns:ap-southeast-2:260763030200:deploy"
           ]
         }
       },

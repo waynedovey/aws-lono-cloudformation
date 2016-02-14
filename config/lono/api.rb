@@ -3,7 +3,7 @@ template "prod-api-app.json" do
   variables(
     :ami => "ami-e0c19f83",
     :availability_zone => "ap-southeast-2a",
-    :instance_type => "m1.small",
+    :instance_type => "t2.micro",
     :port => "80",
     :high_threshold => "15",
     :high_periods => "4",
@@ -22,7 +22,7 @@ template "prod-api-worker.json" do
   variables(
     :ami => "ami-e0c19f83",
     :availability_zone => "ap-southeast-2a",
-    :instance_type => "m1.small",
+    :instance_type => "t2.micro",
     :port => "80",
     :high_threshold => "15",
     :high_periods => "4",
@@ -42,7 +42,7 @@ template "prod-api-redis.json" do
   variables(
     :ami => "ami-e0c19f83",
     :availability_zone => "ap-southeast-2a",
-    :instance_type => "m1.small",
+    :instance_type => "t2.micro",
     :port => "80",
     :volume_size => "20"
   )

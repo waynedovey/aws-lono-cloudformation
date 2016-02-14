@@ -98,7 +98,7 @@ describe Lono do
     it "should make trailing options pass to the partial helper available as instance variables" do
       raw = IO.read("#{@project}/output/prod-api-app.json")
       json = JSON.load(raw)
-      json['Resources']['HostRecord']['Properties']['Comment'].should == 'DNS name for mydomain.com'
+      json['Resources']['HostRecord']['Properties']['Comment'].should == 'DNS name for example.com'
     end
 
     it "should generate user data with variables" do
