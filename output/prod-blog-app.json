@@ -50,7 +50,7 @@
       },
       "ap-southeast-2": {
         "32": "",
-        "64": "ami-456"
+        "64": "ami-e0c19f83"
       }
     }
   },
@@ -408,7 +408,7 @@
 
             ],
             "Protocol": "HTTPS",
-            "SSLCertificateId": ""
+            "SSLCertificateId": "arn:aws:iam::260763030200:server-certificate/loadbalancer00"
           }
         ]
       },
