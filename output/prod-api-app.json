@@ -120,7 +120,7 @@
       "Type": "String"
     },
     "WebServerPort": {
-      "Default": "80",
+      "Default": "8443",
       "Description": "The TCP port for the Web Server",
       "Type": "Number"
     }
@@ -328,8 +328,8 @@
             "Ref": "elb"
           }
         ],
-        "MaxSize": "24",
-        "MinSize": "6",
+        "MaxSize": "3",
+        "MinSize": "3",
         "NotificationConfiguration": {
           "NotificationTypes": [
             "autoscaling:EC2_INSTANCE_LAUNCH",
